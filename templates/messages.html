@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="/static/css/messages.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="/">
+                <img src="/static/images/allu.png" alt="Alumni Portal Logo">
+            </a>
+            <div class="logo-text">Alumni Portal</div>
+        </div>
+    
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/requests">Requests</a></li>
+                <li><a href="/jobs-page">Jobs</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <div class="messages-container">
+            <!-- Conversation List -->
+            <div class="conversation-list" id="conversationList">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i> Loading conversations...
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chat-area" id="chatArea">
+                <!-- Chat Header -->
+                <div class="chat-header" id="chatHeader" style="display: none;">
+                    <img src="" alt="Profile" class="chat-header-avatar" id="chatAvatar">
+                    <div class="chat-header-info">
+                        <div class="chat-header-name" id="chatName"></div>
+                    </div>
+                </div>
+                
+                <!-- Messages Container -->
+                <div class="messages" id="messagesContainer">
+                    <div class="select-conversation" id="selectConversation">
+                        <i class="fas fa-comments"></i>
+                        <p>Select a conversation to start chatting</p>
+                    </div>
+                </div>
+                
+                <!-- Message Input -->
+                <div class="message-input-container" id="messageInput" style="display: none;">
+                    <input type="text" class="message-input" id="messageText" placeholder="Type your message...">
+                    <button class="send-button" id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="/static/js/messages.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post an Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_event.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="/">
+                <img src="/static/images/allu.png" alt="Alumni Portal Logo">
+            </a>
+            <div class="logo-text">Alumni Portal</div>
+        </div>
+    
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/requests">Requests</a></li>
+                <li><a href="/jobs-page">Jobs</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+<section class="event-form">
+    <h2>Post a New Event</h2>
+    <form id="eventForm" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Event Title" required>
+        <textarea name="description" placeholder="Event Description" required></textarea>
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+ <!-- Footer -->
+ {% include 'footer.html' %}
+
+<script src="{{ url_for('static', filename='js/add_event.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - Alumni Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+
+
+    
+    <!-- ✅ NAVBAR -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/allu.png') }}" alt="Alumni Portal Logo">
+            </a>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('alumni_dashboard') }}">Home</a></li>
+                <li><a href="{{ url_for('messages_page') }}">Messages</a></li>
+                <li><a href="{{ url_for('requests_page') }}">Requests</a></li>
+                <li><a href="{{ url_for('jobs_page') }}">Jobs</a></li> 
+                <li><a href="{{ url_for('profile_alumni') }}">Profile</a></li>
+                <li><a href="{{ url_for('events_page') }}">Events</a></li>
+                <li><a href="{{ url_for('logout') }}" class="btn-secondary">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== PROFILE CONTENT ========== -->
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-pic">
+                <img src="{{ url_for('static', filename='images/default_profile.png') }}" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h2 id="profile-name">{{ user.full_name if user else 'N/A' }}</h2>
+                <p><strong>Email:</strong> <span id="profile-email">{{ user.email if user else 'N/A' }}</span></p>
+                <p><strong>Graduation Year:</strong> <span id="profile-year">{{ user.graduation_year if user else 'N/A' }}</span></p>
+                <p><strong>Skills:</strong> <span id="skills-display">{{ user.skills if user.skills else 'No skills added' }}</span></p>
+            </div>
+        </div>
+        <style>
+            .profile-card{
+                display: inline-block;
+                margin-top: 120px;
+                width: 800px;
+            }
+            .profile-container{
+                width: 800px;
+            }
+
+        </style>
+        
+
+        <!-- ✅ Skill Selection Dropdown (Now Added) -->
+        <div class="skills-container">
+            <h3>Select Your Skills</h3>
+            <select id="skill-select" multiple="multiple"></select>
+            <button class="update-btn" onclick="updateSkills()">Update Skills</button>
+            <p id="skills-update-message"></p>
+        </div>
+    </div>
+<style>
+    .skills-container{
+        width :800px;
+    }
+</style>
+    <!-- ========== FOOTER ========== -->
+    {% include 'footer.html' %}
+
+    <!-- ✅ JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+
+</body>
+</html>

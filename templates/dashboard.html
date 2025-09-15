@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Alumni Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="dashboard-header">
+            <h1>Welcome to the Alumni Portal</h1>
+            <nav>
+                <ul>
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/jobs">Job Listings</a></li>
+                    <li><a href="/messages">Messages</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="welcome-box">
+                <h2>Hello, {{ session['user_name'] }}!</h2>
+                <p>Stay connected with your alumni network, explore job opportunities, and grow professionally.</p>
+            </section>
+            
+            <section class="dashboard-options">
+                <div class="option-card">
+                    <h3>Find Jobs</h3>
+                    <p>Explore job listings posted by alumni and apply easily.</p>
+                    <a href="/jobs" class="btn-primary">View Jobs</a>
+                </div>
+                <div class="option-card">
+                    <h3>Connect with Alumni</h3>
+                    <p>Search and connect with alumni to build your professional network.</p>
+                    <a href="/search" class="btn-primary">Search Alumni</a>
+                </div>
+                <div class="option-card">
+                    <h3>Messages</h3>
+                    <p>Chat with alumni and fellow students.</p>
+                    <a href="/messages" class="btn-primary">Open Messages</a>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

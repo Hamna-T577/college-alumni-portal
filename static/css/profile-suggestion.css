@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    background-color: rgb(205, 229, 229);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+}
+/* Navigation */
+/* Navbar Styles - Fixed Version */
+header.navbar {
+    background-color: rgb(20, 9, 111);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    margin-top: -10px;
+}
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 1; /* Make logo appear first */
+}
+
+.logo-container img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Main nav styling - centered */
+nav.main-nav {
+    display: flex;
+    order: 2; /* Make nav appear second */
+    flex: 1; /* Take up available space */
+    justify-content: center; /* Center the navigation items */
+}
+
+nav.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav.main-nav ul li {
+    margin: 0 40px; /* Reduced side margins */
+    position: relative;
+}
+
+/* Icon positioning - moved to left of text */
+nav.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 10px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row-reverse; /* This reverses icon/text order */
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #7d6868;
+    color: white;
+    margin-top: 80px; /* To account for fixed nav */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Profile Container */
+.profile-container {
+    width: 50%;
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), 
+                -5px -5px 15px rgba(0, 0, 0, 0.2);
+    margin: 30px auto;
+    text-align: center;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #2c9feb;
+    margin-bottom: 20px;
+}
+
+.profile-container p {
+    font-size: 1.1rem;
+    margin: 15px 0;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.profile-container strong {
+    color: #010c12;
+}
+
+/* Connect Button */
+.connect-btn {
+    margin: 20px auto;
+    background: #2c9feb;
+    background-image: linear-gradient(to bottom, #2c9feb, #010c12);
+    border-radius: 28px;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.connect-btn:hover {
+    background: #3cb0fd;
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 80%;
+        padding: 20px;
+    }
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        width: 90%;
+    }
+    
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .connect-btn {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+}

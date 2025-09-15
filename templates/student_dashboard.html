@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/student_dashboard.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-wrapper">
+        <div class="top-image"></div>
+        <!-- ========== NAVBAR ========== -->
+        <header class="navbar">
+            <div class="logo-container">
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='images/allu.png') }}" alt="Alumni Portal Logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ url_for('alumni_dashboard') }}">Home</a></li>
+                    <li><a href="{{ url_for('messages_page') }}">Messages</a></li>
+                    <li><a href="{{ url_for('requests_page') }}">Requests</a></li>
+                    <li><a href="{{ url_for('jobs_page') }}">Jobs</a></li>
+                    
+                    <li><a href="{{ url_for('profile_page') }}">Profile</a></li>
+                    <li><a href="{{ url_for('events_page') }}">Events</a></li>
+                  
+                    <li><a href="{{ url_for('logout') }}" class="btn-secondary">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+        <!-- ========== HERO SECTION ========== -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to the College Alumni Portal!</h1>
+                <p>"Bridging the gap between students and alumni for endless opportunities."</p>
+                <div class="container" style="max-width: 1000px; width: 200%;">
+                    <div class="search-section">
+                        <h3 class="ss">Search Batchmates</h3>
+                        <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="Search users..." onkeyup="searchFriends()">
+                            <div id="searchResults"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard-container">
+            <section class="dashboard-section">
+                <h2>Recommended Jobs</h2>
+                <div id="recommended-jobs" class="job-list"></div>
+            </section>
+        </div>
+                
+
+        <!-- ========== FOOTER ========== -->
+       <!-- ========== FOOTER ========== -->
+        <footer class="footer">
+            <div class="footer-left">
+                <img class="fooo" src="{{ url_for('static', filename='images/allu.png') }}" alt="">
+                <p>One-stop portal for alumni of the National Institute of Technology, Patna, Bihar.</p>
+            </div>
+            
+            <div>
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">NIT Patna</a></li>
+                    <li><a href="#">NITP History</a></li>
+                    <li><a href="#">Search Jobs</a></li>
+                    <li><a href="#">Look for Internships</a></li>
+                    <li><a href="#">Web Team</a></li>
+                    <li><a href="#">Admin Portal</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Must Check</h3>
+                <ul>
+                    <li><a href="#">Event Gallery</a></li>
+                    <li><a href="#">Notable Alumni</a></li>
+                    <li><a href="#">Upcoming Events</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                    <li><a href="#">Experiences</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>NIT Patna, Ashok Rajpath, Patna, Bihar-800005, India</p>
+                <p>Ph: <a href="tel:+9106122371715">+91-0612 237 1715</a> / <a href="tel:+9106122372715">237 2715</a></p>
+                <p>Mail: <a href="mailto:alumni@nitp.ac.in">alumni@nitp.ac.in</a></p>
+            </div>
+        </footer>
+
+        <div class="footer-bottom">
+            &copy; 2025 NITP, All Rights Reserved. Designed & Developed by <a href="#" style="color: #00aaff; text-decoration: none;">Electrical Engineers of NIT Patna.</a>
+        </div>
+
+    </div>
+    <!--script src="{{ url_for('static', filename='js/recommended_jobs.js') }}"></script-->
+    <script src="{{ url_for('static', filename='js/jobs.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/applications.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/search_friends.js') }}"></script>
+</body>
+</html>

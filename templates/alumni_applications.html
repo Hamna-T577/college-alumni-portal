@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Applications Received - Alumni</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/applications.css') }}">
+</head>
+<body>
+    <h2>Applications for My Jobs</h2>
+    <h2>Applications Received</h2>
+<table border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Job Title</th>
+      <th>Company</th>
+      <th>Applicant Name</th>
+      <th>Applicant Email</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for app in applications %}
+    <tr>
+      <td>{{ app.application_id }}</td>
+      <td>{{ app.job_title }}</td>
+      <td>{{ app.company }}</td>
+      <td>{{ app.applicant_name }}</td>
+      <td>{{ app.applicant_email }}</td>
+      <td>{{ app.status }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+    
+</body>
+</html>

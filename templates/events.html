@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/events.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+<body>
+    <!-- ✅ NAVBAR -->
+    <nav>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/allu.png') }}" alt="">
+        </div>
+        <ul>
+            <li><a href="{{ url_for('profile_alumni') }}" class="active">Profile</a></li>
+            <li><a href="{{ url_for('events_page') }}"><i class="fas fa-calendar-alt"></i> Events</a></li>
+            <li><a href="{{ url_for('jobs_page') }}"><i class="fas fa-briefcase"></i> Jobs</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>            
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- ✅ EVENTS SECTION -->
+    <section class="events">
+        <h2 class="upco">📅 Events</h2>
+        <div class="event-container" id="event-list">
+            <!-- Events will be dynamically loaded here -->
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+
+    <script src="{{ url_for('static', filename='js/events.js') }}"></script>
+</body>
+</html>

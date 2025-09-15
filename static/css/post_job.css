@@ -1,0 +1,279 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(205, 229, 229);
+    color: #333;
+}
+
+
+/* Navbar Styles - Fixed Version */
+header.navbar {
+    background-color: rgb(20, 9, 111);
+
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 1; /* Make logo appear first */
+}
+
+.logo-container img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Main nav styling - centered */
+nav.main-nav {
+    display: flex;
+    order: 2; /* Make nav appear second */
+    flex: 1; /* Take up available space */
+    justify-content: center; /* Center the navigation items */
+    color: #007bff;
+}
+
+nav.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav.main-nav ul li {
+    margin: 0 40px; /* Reduced side margins */
+    position: relative;
+}
+
+/* Icon positioning - moved to left of text */
+nav.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 10px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row-reverse; /* This reverses icon/text order */
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+nav.main-nav ul li a:hover {
+    color: #007bff;
+
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Underline on hover */
+nav.main-nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav.main-nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Highlighted nav item */
+.main-nav .highlight a {
+    background: rgba(206, 165, 112, 0.8);
+}
+
+.main-nav .highlight a:hover {
+    background: rgba(206, 165, 112, 1);
+}
+
+
+/* Main Content Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 90px auto 30px auto; /* 👈 Top margin increased */
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 16px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border 0.3s;
+    box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form textarea:focus {
+    border-color: rgb(20, 9, 111);
+    outline: none;
+}
+
+form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Button Styles */
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to bottom, #2c9feb, #010c12);
+    color: white;
+    border: none;
+    border-radius: 28px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to bottom, #3cb0fd, #3498db);
+    transform: translateY(-2px);
+}
+
+
+/* Message Display */
+.hidden {
+    display: none;
+}
+
+#message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#message.success {
+    background-color: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+#message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+/* post-job-btn */
+
+
+
+button.update-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+  }
+  
+  button.update-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .update-btn{
+    margin: 10px auto; /* Centers it horizontally */
+    margin-top: 90px;
+        background: #2c9feb;
+        background-image: -webkit-linear-gradient(top, #2c9feb, #010c12);
+        background-image: -moz-linear-gradient(top, #2c9feb, #010c12);
+        background-image: -ms-linear-gradient(top, #2c9feb, #010c12);
+        background-image: -o-linear-gradient(top, #2c9feb, #010c12);
+        background-image: linear-gradient(to bottom, #2c9feb, #010c12);
+        -webkit-border-radius: 28;
+        -moz-border-radius: 28;
+        border-radius: 28px;
+        font-family: Georgia;
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+      }
+      
+      .update-btn:hover {
+        background: #3cb0fd;
+        background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+        text-decoration: none;
+      }
+    
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    form {
+        gap: 15px;
+    }
+}

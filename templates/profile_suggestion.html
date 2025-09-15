@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.full_name }}'s Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile-suggestion.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <style>
+        .profile-container {
+            position: relative;
+        }
+        .role-heading {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #4a6fa5;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+            z-index: 10;
+        }
+        .profile-img {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #4a6fa5;
+        }
+    </style>
+</head>
+<body>
+
+        <header class="navbar">
+            <div class="logo-container">
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='images/allu.png') }}" alt="Alumni Portal Logo">
+                </a>
+            </div>  
+    
+                <nav class="main-nav">
+                   
+                    <ul>
+                        <li><a href="{{ url_for('alumni_dashboard') }}">Home</a></li>
+                        <li><a href="{{ url_for('messages_page') }}">Messages</a></li>
+                        <li><a href="{{ url_for('jobs_page') }}">Jobs</a></li>
+                        <li>
+                            {% if session['role'] == 'student' %}
+                              <a href="{{ url_for('profile_page') }}"><i class="fas fa-user"></i> Profile</a>
+                            {% elif session['role'] == 'alumni' %}
+                              <a href="{{ url_for('profile_alumni') }}"><i class="fas fa-user"></i> Profile</a>
+                            {% endif %}
+                          </li>
+                        <li><a href="{{ url_for('events_page') }}">Events</a></li>
+                        <li><a href="{{ url_for('logout') }}" class="btn-secondary">Logout</a></li>
+                    </ul>
+                </nav>
+    
+    </header>
+<style>
+        .profile-container{
+            margin-top: 30px;
+            
+        }
+    .hii{
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<h1 class="hii">{{ user.full_name }}</h1>
+
+    <section class="profile-container">
+        <!-- Hardcoded dummy profile image -->
+        <img src="{{ url_for('static', filename='images/images new.jpg') }}" alt="Profile Image" class="profile-img">
+        
+        <div class="role-heading">
+            {% if user.role %}
+                {{ user.role }}
+            {% else %}
+                No Role Specified
+            {% endif %}
+        </div>
+        
+        <div class="profile-details">
+            <p><strong>Graduation Year:</strong> {{ user.graduation_year }}</p>
+            <p><strong>Skills:</strong> 
+                {% if user.skills %}
+                    {{ user.skills }}
+                {% else %}
+                    Not provided
+                {% endif %}
+            </p>
+        </div>
+    </section>
+    <button class="connect-btn" 
+                data-userid="{{ user.id }}"
+                data-username="{{ user.full_name }}"
+                onclick="sendConnection({{ user.id }}, '{{ user.full_name }}')">
+                Connect
+            </button>
+        </section>
+
+    {% include 'footer.html' %}
+
+    <script src="{{ url_for('static', filename='js/search_friends.js') }}"></script>
+</body>
+</html>

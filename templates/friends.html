@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Friends</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/friends.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo-container">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/allu.png') }}" alt="Alumni Portal Logo">
+        </a>
+        <div class="logo-text">Alumni Portal</div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('alumni_dashboard') }}">Back to Dashboard</a></li>
+            <li><a href="{{ url_for('logout') }}" class="btn-secondary">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="friends-container">
+    <h2>Your Friends</h2>
+    {% if friends %}
+        <ul id="friends-list">
+            {% for friend in friends %}
+                <li>
+                    <span>{{ friend.full_name }}</span>
+                    <button onclick="window.location.href='/chat/{{ friend.id }}'">Message</button>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No friends found.</p>
+    {% endif %}
+</section>
+
+<footer class="footer">
+    <p>&copy; 2025 College Alumni Portal | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<header class="navbar">
+    <div class="logo-container">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/allu.png') }}" alt="Alumni Portal Logo">
+        </a>
+        <div class="logo-text">Alumni Portal</div>
+    </div>
+    <nav>
+        <ul>
+            <!-- 🔍 Search for Friends -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search users..." onkeyup="searchFriends()">
+                <div id="searchResults"></div>
+            </div>
+            <li><a href="{{ url_for('requests_page') }}">Requests</a></li>
+            <li><a href="{{ url_for('jobs_page') }}">View Jobs</a></li>
+            <li><a href="{{ url_for('profile_page') }}">Profile</a></li>
+            <li><a href="{{ url_for('logout') }}" class="btn-secondary">Logout</a></li>
+        </ul>
+    </nav>
+</header>

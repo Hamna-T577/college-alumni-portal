@@ -1,0 +1,71 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+*.env
+
+# Virtual environment
+venv/
+env/
+
+# Flask-related files
+instance/
+*.log
+*.sqlite3
+db.sqlite3
+
+# Database credentials or local database files
+*.db
+*.sql
+*.sqlite
+
+# VS Code settings
+.vscode/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Static and media files (if generated dynamically)
+static/resumes/
+static/uploads/
+static/tmp/
+
+# Cache and temporary files
+*.swp
+*.swo
+.DS_Store
+*.bak
+*.tmp
+*.cache
+*.pid
+*.seed
+
+# Node modules (if you ever use npm/yarn)
+node_modules/
+
+# Compiled CSS
+*.css.map
+
+# Python dependencies
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore CSV files (if you're using datasets)
+*.csv
+
+# Ignore MySQL dumps (if exporting local databases)
+*.sql
+*.dump
+
+# Ignore coverage and test reports
+coverage/
+coverage.xml
+*.cover
+*.pyc
+*.pyo
+*.pyd
+
+#

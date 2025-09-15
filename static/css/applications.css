@@ -1,0 +1,21 @@
+.application-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.application-card button {
+    margin-right: 10px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.application-card .delete-btn {
+    background-color: #ffdddd;
+    color: red;
+}
+.status {
+    font-weight: bold;
+}

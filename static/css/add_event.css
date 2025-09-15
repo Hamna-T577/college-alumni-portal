@@ -1,0 +1,255 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(205, 229, 229);
+    color: #333;
+}
+
+
+/* Navbar Styles - Fixed Version */
+header.navbar {
+    background-color: rgb(20, 9, 111);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 1; /* Make logo appear first */
+}
+
+.logo-container img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Main nav styling - centered */
+nav.main-nav {
+    display: flex;
+    order: 2; /* Make nav appear second */
+    flex: 1; /* Take up available space */
+    justify-content: center; /* Center the navigation items */
+}
+
+nav.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav.main-nav ul li {
+    margin: 0 40px; /* Reduced side margins */
+    position: relative;
+}
+
+/* Icon positioning - moved to left of text */
+nav.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 10px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row-reverse; /* This reverses icon/text order */
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+nav.main-nav ul li a:hover {
+    color: #007bff;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Underline on hover */
+nav.main-nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav.main-nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Highlighted nav item */
+.main-nav .highlight a {
+    background: rgba(206, 165, 112, 0.8);
+}
+
+.main-nav .highlight a:hover {
+    background: rgba(206, 165, 112, 1);
+}
+
+
+/* Event Form Section */
+.event-form {
+    width: 90%;
+    max-width: 800px;
+    margin: 90px auto 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-form h2 {
+    text-align: center;
+    color: rgb(20, 9, 111);
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Form Elements Styling */
+#eventForm {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#eventForm input[type="text"] {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+#eventForm input[type="text"]:focus {
+    border-color: rgb(20, 9, 111);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(20, 9, 111, 0.1);
+    outline: none;
+}
+
+#eventForm textarea {
+    min-height: 180px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    resize: vertical;
+}
+
+#eventForm textarea:focus {
+    border-color: rgb(20, 9, 111);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(20, 9, 111, 0.1);
+    outline: none;
+}
+
+/* File Input Styling */
+#eventForm input[type="file"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#eventForm input[type="file"]:hover {
+    border-color: rgb(20, 9, 111);
+    background-color: #f0f7ff;
+}
+
+#eventForm input[type="file"]::file-selector-button {
+    padding: 10px 15px;
+    background: rgb(20, 9, 111);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#eventForm input[type="file"]::file-selector-button:hover {
+    background: rgba(20, 9, 111, 0.9);
+}
+
+/* Submit Button Styling */
+#eventForm button[type="submit"] {
+    padding: 12px 30px; /* Reduced vertical, generous horizontal padding */
+    background: linear-gradient(to bottom, #2c9feb, #010c12);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: fit-content; /* Button width matches content */
+    margin: 0 auto; /* Centers the button horizontally */
+    display: block; /* Required for margin auto to work */
+    min-width: 180px; 
+}
+
+#eventForm button[type="submit"]:hover {
+    background: linear-gradient(to bottom, #3cb0fd, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Placeholder Styling */
+::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-form {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .event-form h2 {
+        font-size: 24px;
+    }
+    
+    #eventForm input[type="text"],
+    #eventForm textarea,
+    #eventForm input[type="file"] {
+        padding: 12px;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/post_job.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="/">
+                <img src="/static/images/allu.png" alt="Alumni Portal Logo">
+            </a>
+            <div class="logo-text">Alumni Portal</div>
+        </div>
+    
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/requests">Requests</a></li>
+                <li><a href="/jobs-page">Jobs</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <form id="postJobForm">
+            <div class="form-group">
+                <label for="title">Job Title</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Job Description</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="location">Job Location</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="skills_required">Skills Required (comma-separated)</label>
+                <input type="text" id="skills_required" name="skills_required" required>
+            </div>
+            
+            <button type="submit" class="update-btn">Post Job</button>
+            <div id="message" class="message"></div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+
+
+<style>
+    .main-nav{
+        background: #0d1a42; /* Background color */
+
+    }
+    .nav{
+        background: #0d1a42; /* Background color */
+
+    }
+</style>
+
+    <script src="{{ url_for('static', filename='js/post_job.js') }}"></script>
+</body>
+</html>

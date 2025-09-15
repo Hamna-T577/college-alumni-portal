@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Profile - Alumni Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile_alu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+</head>
+<body>
+
+    <!-- ✅ NAVBAR -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/allu.png') }}" alt="Alumni Portal Logo">
+            </a>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('alumni_dashboard') }}">Home</a></li>
+                <li><a href="{{ url_for('messages_page') }}">Messages</a></li>
+                <li><a href="{{ url_for('requests_page') }}">Requests</a></li>
+                <li><a href="{{ url_for('jobs_page') }}">Jobs</a></li>
+                <li><a href="{{ url_for('post_job_page') }}">Post Job</a></li>
+                <li><a href="{{ url_for('profile_alumni') }}">Profile</a></li>
+                <li><a href="{{ url_for('events_page') }}">Events</a></li>
+                <li class="highlight"><a href="{{ url_for('add_event_page') }}">Post Event</a></li>
+                <li><a href="{{ url_for('logout') }}" class="btn-secondary">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ✅ PROFILE CONTAINER -->
+    <div class="profile-container">
+       <!-- <div class="profile-pic">
+            <img src="{{ url_for('static', filename='images/default_profile.png') }}" alt="Profile Picture">
+        </div>-->
+
+
+        <div class="profile-pic">
+            <form id="profile-pic-form" method="POST" enctype="multipart/form-data" action="{{ url_for('profile_page') }}">
+
+                <label for="profile-image-input">
+                    <img id="profile-pic-preview" src="{{ url_for('static', filename=user.profile_image) if user.profile_image else url_for('static', filename='images/images new.jpg') }}" alt="Profile Picture">
+                </label>
+                <input type="file" name="profile_image" id="profile-image-input" accept="image/*" onchange="document.getElementById('profile-pic-form').submit();" hidden>
+            </form>
+        </div>
+        
+
+
+        <div class="profile-info">
+            <h2 id="profile-name">{{ user.full_name if user else 'N/A' }}</h2>
+            <p><strong>Email:</strong> <span id="profile-email">{{ user.email if user else 'N/A' }}</span></p>
+            <p><strong>Graduation Year:</strong> <span id="profile-year">{{ user.graduation_year if user else 'N/A' }}</span></p>
+            <p><strong>Skills:</strong> <span id="skills-display">{{ user.skills if user.skills else 'No skills added' }}</span></p>
+        </div>
+
+        <!-- ✅ MY POSTED EVENTS SECTION -->
+        <div class="events-container">
+            <h3>📅 My Posted Events</h3>
+            <div id="my-events-list" class="event-list"></div>
+        </div>
+
+        <!-- ✅ SKILLS SELECTION -->
+        <div class="skills-container">
+            <h3>🔹 Select Your Skills</h3>
+            <select id="skill-select" multiple="multiple"></select>
+            <button class="update-btn" onclick="updateSkills()">Update Skills</button>
+            <p id="skills-update-message"></p>
+        </div>
+    </div>
+
+    <!-- ✅ FOOTER -->
+
+    </head>
+    <body>
+    
+        {% include 'footer.html' %}
+
+    <!-- ✅ JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="{{ url_for('static', filename='js/profile_alu.js') }}"></script>
+
+</body>
+</html>

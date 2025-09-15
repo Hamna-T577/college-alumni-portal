@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - COET Alumni Portal</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+
+
+   
+    <nav>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/allu.png') }}" alt="">
+    </div>
+        <ul>
+            <li><a href="{{ url_for('profile_page') }}" class="restricted">home</a></li>
+            <li><a href="#" class="restricted" id="events-link">Events</a></li>
+            <li><a href="#" class="restricted" id="jobs-link">Jobs</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>            
+                <li><a href="{{ url_for('login_page') }}">Login</a></li>
+                <li><a href="{{ url_for('register_page') }}">Sign Up</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+
+        </ul>
+    </nav>
+
+    {% if not logged_in %}
+    <div class="dashboard">
+        <p>You need to <a href="{{ url_for('login_page') }}">Login</a> and <a href="{{ url_for('register_page') }}">Sign Up</a> for more access.</p>
+    </div>
+    {% endif %}
+
+
+
+   
+   
+</head>
+<body>
+    <div class="container">
+        <h1>About Us</h1>
+        <div class="sectionn">
+            <p><strong>National Institute of Technology Patna</strong> has been declared as an Institute of National Importance and has been granted a fully Autonomous Status by MHRD, Government of India. The Institute has also been declared as a Centre of Excellence of impart high-level education, training, research, and development in science, engineering technology, and humanities.</p>
+            
+            <p>It is imparting high-quality education & values at UG (B.Tech), PG (M.Tech) & Ph.D. programmes through its experienced faculty well versed in their respective field of engineering and technology with well-equipped laboratories.</p>
+            <div class="abouttu1"> 
+            <img  class="aboutu"src="{{ url_for('static', filename='images/coll.jpg') }}" alt="Annual Alumni Meet">
+
+            </div>
+        </div>
+
+        
+        <div class="sectionn">
+            <p>At present, the Institute has seven disciplines viz. Architecture, Civil Engineering, Computer Science & Engg., Electrical Engg., Electronics & Communication Engg., Information Technology, and Mechanical Engg., and well-established departments of Physics, Mathematics, and Humanities and Social Science.</p>
+            <p>National Institute of Technology Patna aims at setting out very high education standards and holds a long record of academic excellence. The pedagogical aspects have been formulated to suit not only the needs of contemporary industrial requirements but also to develop human potential to its fullest extent in a range of professions.</p>
+            <p>Extra-curricular activities are planned through games and sports, cultural programmes, and NSS activities. Cultural activities provide a platform to know about the culture of various states and regions of the country and an opportunity for national integration.</p>
+        </div>
+        
+        <div class="sectionn">
+            <p>Ever since its rechristening, NIT Patna has been on the fast track of development and has undergone numerous facelifts because of which placement records have witnessed unprecedented growth and are touching new heights as the graph of placement is increasing remarkably.</p>
+        </div>
+        <h2>Key Objectives</h2>
+
+        <div class="section">
+            <img  class="aboutuu"src="{{ url_for('static', filename='images/ment1.jpg') }}" alt="Annual Alumni Meet">
+
+            <ul>
+                <li>Provide a vibrant forum that promotes interaction and networking among alumni of the Institute.</li>
+                <li>Help alumni achieve their professional and societal goals.</li>
+                <li>Help alumni in their hour of need.</li>
+                <li>Contribute to the Institute's vision of being recognized among the world's leading institutions in academics, research, outreach, and innovation.</li>
+                <li>Function on a charitable basis and run the Association on a 'no profit, no loss' basis.</li>
+                <li>Promote best practices in different areas of science, technology, humanities, and social sciences for the benefit of society, especially disadvantaged sections.</li>
+            </ul>
+        </div>
+    </div>
+<body>
+
+<footer class="footer">
+    <div class="footer-left">
+        <img src="{{ url_for('static', filename='images/allu.png') }}" alt=""  class="footer-logo">
+
+        <p>One-stop portal for alumni of the National Institute of Technology, Patna, Bihar.</p>
+    </div>
+    
+    <div>
+        <h3>Useful Links</h3>
+        <ul>
+            <li><a href="#">NIT Patna</a></li>
+            <li><a href="#">NITP History</a></li>
+            <li><a href="#">Search Jobs</a></li>
+            <li><a href="#">Look for Internships</a></li>
+            <li><a href="#">Web Team</a></li>
+            <li><a href="#">Admin Portal</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Must Check</h3>
+        <ul>
+            <li><a href="#">Event Gallery</a></li>
+            <li><a href="#">Notable Alumni</a></li>
+            <li><a href="#">Upcoming Events</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Experiences</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>NIT Patna, Ashok Rajpath, Patna, Bihar-800005, India</p>
+        <p>Ph: <a href="tel:+9106122371715">+91-0612 237 1715</a> / <a href="tel:+9106122372715">237 2715</a></p>
+        <p>Mail: <a href="mailto:alumni@nitp.ac.in">alumni@nitp.ac.in</a></p>
+    </div>
+</footer>
+
+<div class="footer-bottom">
+    &copy; 2025 NITP, All Rights Reserved. Designed & Developed by <a href="#" style="color: #00aaff; text-decoration: none;">Electrical Engineers of NIT Patna.</a>
+</div>  <script src="{{ url_for('static', filename='js/about.js') }}"></script>
+</body>
+</html>
+

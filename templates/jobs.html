@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Jobs - Alumni Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jobs.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+<body>
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="/">
+                <img src="/static/images/allu.png" alt="Alumni Portal Logo">
+            </a>
+            <div class="logo-text">Alumni Portal</div>
+        </div>
+    
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/requests">Requests</a></li>
+                <li><a href="/jobs-page">Jobs</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="dashboard-section">
+        <h2>Available Jobs</h2>
+        <div id="job-list" class="job-list"></div>  <!-- ✅ Ensure this exists -->
+    </section>
+    
+
+    <!-- ========== FOOTER ========== -->
+     <!-- Footer -->
+    {% include 'footer.html' %}
+
+    <script src="{{ url_for('static', filename='js/jobs.js') }}"></script>
+</body>
+</html>

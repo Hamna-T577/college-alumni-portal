@@ -1,0 +1,818 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- ✅ Link CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homestyle.css') }}">
+
+</head>
+<body>
+
+    <div class="background-wrapper">
+        <div class="mmi">
+            <div class="upp">
+                <div class="hero-section">
+                    <h1 class="welli">Welcome to the College Alumni Portal</h1>
+                    <p class="quote">"Bridging the gap between students and alumni for endless opportunities."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========== ✅ HEADER / NAVBAR ========== -->
+    <header class="navbar">
+        <nav>
+            
+                <div class="logo-container">
+                
+                        <img src="{{ url_for('static', filename='images/allu.png') }}" alt="Alumni Portal Logo">
+                    
+                </div>
+                <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#" onclick="alert('Login/Signup')">Events</a></li>
+                <li><a href="#" onclick="alert('Login/Signup')">Jobs</a></li> 
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                {% if logged_in %}
+                    <li><a href="{{ url_for('logout') }}" class="btn-secondary">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login_page') }}" class="btn-secondary">Login</a></li>
+                    <li><a href="{{ url_for('register_page') }}" class="btn-primary">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+<style>
+    .ss{
+        color: white;
+    }
+</style>
+    <!-- ========== ✅ HERO SECTION ========== -->
+        
+    <div class="container" style="max-width: 1000px; width: 100%;">
+        <div class="search-section">
+            <h3 class="ss">Search Batchmates</h3>
+            <input type="text" id="batchmate-search" class="form-control" 
+                   placeholder="Enter name or batch year" 
+                   style="width: 100%; max-width: 800px;">
+    
+            <p id="login-message" style="display: none; color: #f5f7f9;">
+                You need to <a href="{{ url_for('login_page') }}">Login</a> or
+                <a href="{{ url_for('register_page') }}">Sign Up</a> for more access.
+            </p>
+        </div>
+    </div>
+    
+    
+    <script>
+    const loggedIn = {{ logged_in | default(false) | tojson }};
+    </script>
+    
+
+    
+    
+
+        <div class="one">
+            <div class="two">
+                <h1> </h1>
+            </div>
+            <div class="three">
+                <h4 class="three1">The National Institute of Technology   takes pride in its accomplished alumni who have made significant contributions in various fields. The institute recognizes the invaluable role played by its alumni in its progress, development, and future direction.
+
+                    The National Institute of Technology Alumni Association is a non-profit organization founded  to connect, engage and support the institute's alumni community. The association was established in 2014 and is registered under the Societies Registration Act, 1860.
+                    
+                    We are pleased to share that our institute is commemorating the historic occasion of its centenary year in 2024. We eagerly anticipate meaningful and inclusive engagement with our alumni that will benefit our institution, its current students, and the broader community. We invite you to join the Alumni Association. Please feel free to reach out to us.</h4>
+            </div>
+
+
+
+
+    
+    <div class="oneone">
+        <button class="battu">Know More</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+        <div class="princiheadd">
+            <h2 class="princihead"> From Director's Desk</h2>
+            </div>
+            <div class="princi">
+            
+                <div class="bb">
+                    <h2 class="niitye">Prof. P. K. Jain</h2>
+                   <h3 class="niity"> Director of NIT Patna</h3>
+                    <h3 class="niityy">Prof. Pradip K. Jain joined as a Lecturer of Electronics Engineering at BHU's Institute of Technology in 1981, becoming a Professor in 2001. Currently, he serves as Director of the NIT.
+                   </h3>
+                </div>
+                <div>
+                    <img class="principal"src="{{ url_for('static', filename='images/DLK_Desk_Photo.jpg') }}">
+            
+                </div>
+                <div>
+                    <h2 class="princihead2">Celebrating 100 Years of NIT, Patna</h2>
+                    <h3 class="niit1">"We are celebrating the 100 years of the glorious history of Engineering Education in Bihar, which started with the establishment of Bihar College of Engineering (BCE), Patna in 1924.
+                    
+                    Since then, the Engineering Education has undergone a sea change and has been instrumental in the development of the Bihar region"
+                    </h3>
+                </div>
+            </div>
+            <style>
+                .niity{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: justify;
+                        text-justify: inter-word;
+                        line-height: 1.6;
+                        width: 350px;
+                        height: 400px;
+                        margin-left: 40px;
+                    margin-top: -370px;
+                }
+                .niitye{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: justify;
+                        text-justify: inter-word;
+                        line-height: 1.6;
+                        width: 350px;
+                        height: 400px;
+                        margin-left: 40px;
+                        color: rgb(29, 29, 100);
+                    
+                }
+                .niityy{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: justify;
+                        text-justify: inter-word;
+                        line-height: 1.6;
+                        width: 350px;
+                        height: 400px;
+                        margin-left: 40px;
+                    margin-top: -300px;
+                }
+                
+                .princihead{
+                    color: rgb(30, 30, 113);
+                    margin-left: -750px;
+                    size: 10px;
+                    text-decoration: underline;
+                    
+                font-weight: bold;  /* Makes text bold */
+                font-size: 40px;    /* Increases text size */
+            }
+            
+                
+                .princiheadd{
+                    margin-top: 700px;
+                }
+                .princihead2{
+                    color: rgb(30, 30, 113);
+                   
+                }
+                .niit1{
+                    display: flex;
+                    text-align: justify;
+                        text-justify: inter-word;
+                        line-height: 1.6;
+                        width: 350px;
+                        height: 400px;
+                        
+                }
+                .principal {
+                width: 300px;  /* Set the width */
+                height: 300px; /* Set the height */
+                border-radius: 50%; /* Makes it circular */
+                object-fit: cover; /* Ensures the image covers the entire area */
+                border: 3px solid #fff; /* Optional: Add a border */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+            
+            
+                }
+                .princi{
+                    margin-top: 100px;
+                    margin-bottom: 90px;
+                    display: flex;
+                    gap: 90px;
+                    
+            
+                    opacity: 0; /* Initially hidden */
+                        transform: translateY(50px); /* Move down initially */
+                        transition: opacity 1s ease-out, transform 1s ease-out;
+                }
+            
+            
+                .princi.show {
+                        opacity: 1; /* Make it visible */
+                        transform: translateY(0); /* Move it to normal position */
+                    }
+            
+                    .niity, .niitye, .niityy, .niit1 {
+                        text-align: justify;
+                        line-height: 1.6;
+                        width: 350px;
+                    }
+            
+            
+            
+            
+            </style>
+            
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("show");
+                            }
+                        });
+                    });
+            
+                    observer.observe(document.querySelector(".princi"));
+                });
+            </script>
+            
+
+
+
+
+
+
+
+       <!--
+        <div class="notable-alumni">
+            <h1 class="nota1">Our Notable Alumni</h1>
+            <div class="alumni-carousel">
+                <div class="alumni-track">
+                    <div class="alumni-card">
+                        <img class="alumniy" src="{{ url_for('static', filename='images/alumni1.png') }}">
+                        <h3>John Doe</h3>
+                        <p>Software Engineer, Google</p>
+                    </div>
+                    <!-- More alumni cards... -->
+              <!--  </div>
+            </div>
+        </div>-->
+<!--
+        <section>
+            <div class="main">
+                <div class="testimonial">
+                    <h1 class="nota">Testimonials for our Alumni</h1>
+                </div>
+                <div class="containertesti">
+                    <button class="arrow left">&#8592;</button>
+                    <button class="arrow right">&#8594;</button>
+                    <div class="scroll-wrapper" id="scrollContainer">
+                        <!-- Testimonial cards... -->
+                  <!-- </div>
+                </div>
+            </div>
+        </section>-->
+
+
+
+<!--
+        <div class="notable-alumni">
+            <h1 class="nota1">Our Notable Alumni</h1>
+            <div class="alumni-carousel">
+                <div class="alumni-track">
+                    <div class="alumni-card">
+                        
+                        <img class="alumniy"src="{{ url_for('static', filename='images/alumni1.png') }}">
+        
+                        <h3>John Doe</h3>
+                        <p>Software Engineer, Google
+                        </p>
+                    </div>
+                    <div class="alumni-card">
+                        <img class="alumniy"src="{{ url_for('static', filename='images/alumni2.png') }}">
+        
+                        <h3>Jane Smith</h3>
+                        <p>Data Scientist, Amazon</p>
+                    </div>
+                    <div class="alumni-card">
+                        <img src="alumni3.jpg" alt="Alumni 3">
+                        <h3>Michael Brown</h3>
+                        <p>Product Manager, Microsoft</p>
+                    </div>
+                    <div class="alumni-card">
+                        <img src="alumni4.jpg" alt="Alumni 4">
+                        <h3>Emily White</h3>
+                        <p>CEO, Startup X</p>
+                    </div>
+                    <div class="alumni-card">
+                        <img src="alumni5.jpg" alt="Alumni 5">
+                        <h3>David Lee</h3>
+                        <p>UX Designer, Apple</p>
+                    </div>
+                    <div class="alumni-card">
+                        <img src="alumni6.jpg" alt="Alumni 6">
+                        <h3>Sarah Johnson</h3>
+                        <p>AI Researcher, OpenAI</p>
+                    </div>
+                    <div class="alumni-card">
+                        <img src="alumni7.jpg" alt="Alumni 7">
+                        <h3>Robert Wilson</h3>
+                        <p>Financial Analyst, JPMorgan</p>
+                    </div>
+                    <!-- Duplicate for seamless scrolling --><!--
+                    <div class="alumni-card">
+                        <img src="{{ url_for('static', filename='images/alumni1.png') }}">
+                        <h3>John Doe</h3>
+                        <p>Software Engineer, Google</p>
+                    </div>
+                    <div class="alumni-card">
+                        <img src="alumni2.jpg" alt="Alumni 2">
+                        <h3>Jane Smith</h3>
+                        <p>Data Scientist, Amazon</p>
+                    </div>
+                    <div class="alumni-card">
+                        <img src="alumni3.jpg" alt="Alumni 3">
+                        <h3>Michael Brown</h3>
+                        <p>Product Manager, Microsoft</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+        .notable-alumni {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            background-color:    rgb(26, 75, 104);
+            padding-bottom: 90px;
+        
+        
+        }
+        .alumni-carousel {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            margin-top: 30px;
+        }
+        .nota1{
+            color: wheat;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        
+        }
+        .nota{
+            color:    rgb(26, 75, 104);
+        }
+        .alumni-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            animation: scrollAlumni 14s linear infinite;
+        }
+        .alumni-card {
+            flex: 0 0 200px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .alumni-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .alumni-card:hover {
+            transform: scale(1.1);
+            animation-play-state: paused;
+        
+        
+        .alumniy{
+            size: -2px;
+        }
+        
+        
+        }
+        @keyframes scrollAlumni {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+              
+                
+        
+        </style>
+        
+        <script>
+        const track = document.querySelector('.alumni-track');
+        track.addEventListener('mouseover', function() {
+            this.style.animationPlayState = 'paused';
+        });
+        track.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+        });
+        </script>
+        
+    -->
+        
+        
+        
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            });
+    
+            observer.observe(document.querySelector(".princi"));
+        });
+    </script>
+    
+    <div class="notable-alumni">
+        <h1 class="nota1">Our Notable Alumni</h1>
+        <div class="alumni-carousel">
+            <div class="alumni-track">
+                <div class="alumni-card">
+                    
+                    <img class="alumniy"src="{{ url_for('static', filename='images/alumni1.1.jpg') }}">
+    
+                    <h3>John Doe</h3>
+                    <p>Software Engineer, Google
+                    </p>
+                </div>
+                <div class="alumni-card">
+                    <img class="alumniy"src="{{ url_for('static', filename='images/alumni5.jpg') }}">
+    
+                    <h3>Jane Smith</h3>
+                    <p>Data Scientist, Amazon</p>
+                </div>
+                <div class="alumni-card">
+                    <img class="alumniy"src="{{ url_for('static', filename='images/alumninew.jpg') }}">
+    
+                    <h3>Michael Brown</h3>
+                    <p>Product Manager, Microsoft</p>
+                </div>
+                <div class="alumni-card">
+                    <img class="alumniy"src="{{ url_for('static', filename='images/alumni4.jpg') }}">
+    
+                    <h3>Emily White</h3>
+                    <p>CEO, Startup X</p>
+                </div>
+                <div class="alumni-card">
+                    <img class="alumniy"src="{{ url_for('static', filename='images/alumni2.2.jpg') }}">
+    
+                    <h3>David Lee</h3>
+                    <p>UX Designer, Apple</p>
+                </div>
+                <div class="alumni-card">
+                    <img class="alumniy"src="{{ url_for('static', filename='images/alumni6.jpg') }}">
+    
+                    <h3>Sarah Johnson</h3>
+                    <p>AI Researcher, OpenAI</p>
+                </div>
+                <div class="alumni-card">
+                    <img class="alumniy"src="{{ url_for('static', filename='images/alumninew1.jpg') }}">
+    
+                    <h3>Robert Wilson</h3>
+                    <p>Financial Analyst, JPMorgan</p>
+                </div>
+                <!-- Duplicate for seamless scrolling -->
+                <div class="alumni-card">
+                    <img src="{{ url_for('static', filename='images/alumni1.1.jpg') }}">
+                    <h3>John Doe</h3>
+                    <p>Software Engineer, Google</p>
+                </div>
+                <div class="alumni-card">
+                    <img class="alumniy"src="{{ url_for('static', filename='images/alumni5.jpg') }}">
+    
+                    <h3>Jane Smith</h3>
+                    <p>Data Scientist, Amazon</p>
+                </div>
+                <div class="alumni-card">
+                    <img class="alumniy"src="{{ url_for('static', filename='images/alumninew.jpg') }}">
+    
+                    <h3>Michael Brown</h3>
+                    <p>Product Manager, Microsoft</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+    .notable-alumni {
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+        background-color:    rgb(26, 75, 104);
+        padding-bottom: 90px;
+    
+    
+    }
+    .alumni-carousel {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .nota1{
+        color: wheat;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    }
+    .nota{
+        color:    rgb(26, 75, 104);
+    }
+    .alumni-track {
+        display: flex;
+        gap: 20px;
+        width: max-content;
+        animation: scrollAlumni 14s linear infinite;
+    }
+    .alumni-card {
+        flex: 0 0 200px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s;
+    }
+    .alumni-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .alumni-card:hover {
+        transform: scale(1.1);
+        animation-play-state: paused;
+    
+    
+    .alumniy{
+        size: -2px;
+    }
+    
+    
+    }
+
+    
+@keyframes scrollAlumni {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+      
+        
+
+</style>
+
+<script>
+const track = document.querySelector('.alumni-track');
+track.addEventListener('mouseover', function() {
+    this.style.animationPlayState = 'paused';
+});
+track.addEventListener('mouseleave', function() {
+    this.style.animationPlayState = 'running';
+});
+</script>
+
+
+
+
+
+
+
+
+
+            <style>
+              /*  body {
+                    background-color: lightblue;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                }*/
+        
+                section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; /* Full viewport height */
+                
+            }
+            .nota{
+                font-size: 30px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        .main{
+            
+                align-items: center;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+                height: 100vh; /* Full viewport height */
+        
+                
+        }
+                .containertesti {
+                    position: relative;
+                    width: 80%;
+                    overflow: hidden;
+        margin: 0 auto;
+                    display: flex;
+                align-items: center;
+                justify-content: center;
+                justify-items: center;
+                align-content: center;
+            
+                }
+                .scroll-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+                    overflow-x: auto;
+                    scroll-behavior: smooth;
+                    scrollbar-width: none;
+                    -ms-overflow-style: none;
+                    height: 400px;
+                    padding: 20px;
+                    white-space: nowrap;
+        
+                    justify-content: center;
+                }
+                .scroll-wrapper::-webkit-scrollbar {
+                    display: none;
+                }
+                .card {
+                    min-width: 300px;
+                    max-width: 300px;
+                    background: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    display: inline-block;
+                    word-wrap: break-word;
+                    overflow: hidden;
+                    text-align: justify;
+                    white-space: normal;
+                }
+                .card .name {
+                    font-weight: bold;
+                    margin-top: 10px;
+                    text-align: right;
+                }
+                .arrow {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: rgba(0, 0, 0, 0.5);
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    z-index: 10;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .left {
+                    left: 20px;
+                }
+                .right {
+                    right: 20px;
+                }
+                .testimonial {
+            text-align: center;
+        
+            width: 100%
+        }
+        
+        
+            </style>
+        </head>
+        <body>
+            <section>
+                <div class="main">
+                <div class="testimonial">
+                    <h1 class="nota">Testimonials for our Alumni</h1>
+                    </div>
+            <div class="containertesti">
+                
+                
+                <button class="arrow left" onclick="scrollLeft()">&#8592;</button>
+                <button class="arrow right" onclick="scrollRight()">&#8594;</button>
+        
+        
+                <div class="scroll-wrapper" id="scrollContainer">
+                    <div class="card">
+                        <p>Welcome to our alumni network! Stay connected, explore career opportunities, and participate in events.</p>
+                        <p class="name">- John Doe</p>
+                    </div>
+                    <div class="card">
+                        <p>Join our exclusive alumni community to mentor students, share experiences, and contribute to our legacy.</p>
+                        <p class="name">- Jane Smith</p>
+                    </div>
+                    <div class="card">
+                        <p>Discover networking opportunities, reunions, and workshops designed to keep you engaged with fellow alumni.</p>
+                        <p class="name">- Michael Brown</p>
+                    </div>
+                    <div class="card">
+                        <p>Our alumni portal is a hub for learning, growing, and giving back to the institution that shaped us.</p>
+                        <p class="name">- Emily Johnson</p>
+                    </div>
+                    <div class="card">
+                        <p>Stay updated with alumni news, upcoming events, and inspiring success stories from our graduates.</p>
+                        <p class="name">- David Williams</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </section>
+            <script>
+                function scrollLeft() {
+                    document.getElementById('scrollContainer').scrollBy({ left: -300, behavior: 'smooth' });
+                }
+                function scrollRight() {
+                    document.getElementById('scrollContainer').scrollBy({ left: 300, behavior: 'smooth' });
+                }
+            </script>
+        
+
+
+
+
+
+    <!-- ========== ✅ FOOTER ========== -->
+            
+
+    </head>
+    <body>
+    
+        <footer class="footer">
+            <div class="footer-left">
+                <img  class="fooo"src="{{ url_for('static', filename='images/allu.png') }}" alt="">
+    
+                <p>One-stop portal for alumni of the National Institute of Technology, Patna, Bihar.</p>
+            </div>
+            
+            <div>
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">NIT Patna</a></li>
+                    <li><a href="#">NITP History</a></li>
+                    <li><a href="#">Search Jobs</a></li>
+                    <li><a href="#">Look for Internships</a></li>
+                    <li><a href="#">Web Team</a></li>
+                    <li><a href="#">Admin Portal</a></li>
+                </ul>
+            </div>
+    
+            <div>
+                <h3>Must Check</h3>
+                <ul>
+                    <li><a href="#">Event Gallery</a></li>
+                    <li><a href="#">Notable Alumni</a></li>
+                    <li><a href="#">Upcoming Events</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                    <li><a href="#">Experiences</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>NIT Patna, Ashok Rajpath, Patna, Bihar-800005, India</p>
+                <p>Ph: <a href="tel:+9106122371715">+91-0612 237 1715</a> / <a href="tel:+9106122372715">237 2715</a></p>
+                <p>Mail: <a href="mailto:alumni@nitp.ac.in">alumni@nitp.ac.in</a></p>
+            </div>
+        </footer>
+    
+        <div class="footer-bottom">
+            &copy; 2025 NITP, All Rights Reserved. Designed & Developed by <a href="#" style="color: #00aaff; text-decoration: none;">Electrical Engineers of NIT Patna.</a>
+        </div>
+    
+       
+    
+    
+
+
+
+
+            <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

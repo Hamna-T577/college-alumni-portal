@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/messages.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="messages-container">
+        <!-- Conversation List -->
+        <div class="conversation-list" id="conversationList">
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i> Loading conversations...
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <!-- Inside your chat-area div -->
+<div class="chat-area" id="chatArea">
+    <!-- Chat Header -->
+    <div class="chat-header" id="chatHeader" style="display: none;">
+        <img src="" alt="Profile" class="chat-header-avatar" id="chatAvatar">
+        <div class="chat-header-info">
+            <div class="chat-header-name" id="chatName"></div>
+        </div>
+    </div>
+    
+    <!-- Messages Container -->
+    <div class="messages" id="messagesContainer">
+        <div class="select-conversation" id="selectConversation">
+            <i class="fas fa-comments"></i>
+            <p>Select a conversation to start chatting</p>
+        </div>
+        <!-- Messages will be inserted here by JavaScript -->
+    </div>
+    
+    <!-- Message Input (always visible when conversation selected) -->
+    <div class="message-input-container" id="messageInput" style="display: none;">
+        <input type="text" class="message-input" id="messageText" placeholder="Type your message...">
+        <button class="send-button" id="sendButton">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/messages.js') }}"></script>
+</body>
+</html> 

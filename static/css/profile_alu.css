@@ -1,0 +1,349 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(205, 229, 229);
+    color: #4E342E;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar wrapper */
+header.navbar {
+    background-color:  rgb(20, 9, 111);
+    
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container img {
+    height: 42px;
+    width: auto;
+}
+
+/* Main nav styling */
+nav.main-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end; /* 👈 move everything to the left */
+    padding-left: 0px; /* 👈 optional: add padding to shift content from edge */
+}
+
+nav.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav.main-nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 18px;
+    font-size: 18px;
+    display: inline-block;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+nav.main-nav ul li a:hover {
+    color: #007bff;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Underline on hover */
+nav.main-nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav.main-nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.post-job-btn {
+    background: rgba(206, 165, 112, 0.8);
+    font-weight: bold;
+}
+
+.post-job-btn:hover {
+    background: rgba(206, 165, 112, 1);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Profile Container */
+.profile-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 80px auto 30px; /* Increased top margin */
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+}
+
+/* Profile Header */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 3px solid rgb(20, 9, 111);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-info h2 {
+    color: rgb(20, 9, 111);
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+.profile-info p strong {
+    color: rgb(20, 9, 111);
+}
+
+/* Events Container */
+.events-container {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border-left: 4px solid rgb(20, 9, 111);
+}
+
+.events-container h3 {
+    color: rgb(20, 9, 111);
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.event-list {
+    display: grid;
+    gap: 15px;
+}
+
+/* Skills Container */
+.skills-container {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border-left: 4px solid rgb(20, 9, 111);
+}
+
+.skills-container h3 {
+    color: rgb(20, 9, 111);
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.select2-container {
+    width: 100% !important;
+    margin-bottom: 15px;
+}
+
+.select2-selection--multiple {
+    min-height: 45px;
+    padding: 5px;
+    border: 1px solid #ddd !important;
+}
+
+.update-btn {
+    background: rgb(20, 9, 111);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.update-btn:hover {
+    background: rgb(26, 75, 104);
+    transform: translateY(-2px);
+}
+
+#skills-update-message {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .profile-container {
+        padding: 20px;
+    }
+    
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .profile-info p {
+        font-size: 1rem;
+    }
+    
+    .skills-container, .events-container {
+        padding: 15px;
+    }
+}
+/* ✅ Resume Upload Styling */
+.resume-upload-container {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px dashed #ccc;
+}
+
+.resume-upload-container h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#resume-file {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+.footer {
+    background-color: #0a0a0a;
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 100px;
+    }
+    .footer-logo {
+    max-width: 100px;
+    }
+    .footer-left {
+    max-width: 300px;
+    }
+    .footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #00aaff;
+    border-left: 3px solid #00aaff;
+    padding-left: 10px;
+    }
+    .footer ul {
+    list-style: none;
+    padding: 0;
+    }
+    .footer ul li {
+    margin-bottom: 10px;
+    }
+    .footer ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+    }
+    .footer ul li a:hover {
+    color: #00aaff;
+    }
+    .footer-contact p {
+    margin: 5px 0;
+    }
+    .footer-contact a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+    }
+    .footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background: black;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .fooo{
+        width: 60px;
+        height: 60px;
+    }

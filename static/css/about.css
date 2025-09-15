@@ -1,0 +1,218 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(205, 229, 229);
+
+    color: #4E342E;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    background-color: #f3edea;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 90px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #3E2723;
+}
+
+.section {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+
+
+
+nav {
+background-color: rgb(20, 9, 111);
+padding: 15px;
+text-align: center;
+padding-top: -90px;
+
+position: fixed; /* Fixes the navbar */
+top: 0; /* Sticks it to the top */
+left: 0;
+width: 100%; /* Full width */
+background: #0d1a42; /* Background color */
+
+ /* Background color */
+color: white;
+padding: 15px;
+text-align: center;
+z-index: 1000; /* Ensures it stays above other elements */
+
+display: flex;
+gap: 120px;
+}
+
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+}
+
+nav ul li {
+margin: 0 15px;
+position: relative;
+}
+
+/* Basic styling for navbar links */
+nav ul li a {
+color: white;
+text-decoration: none;
+font-size: 18px;
+font-weight: bold;
+padding: 10px 15px;
+display: inline-block;
+transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect: Change Text Color & Background */
+nav ul li a:hover {
+color: #007bff;
+background-color: white;
+border-radius: 5px;
+}
+
+/* Hover Effect: Underline Animation */
+nav ul li a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: -5px;
+width: 100%;
+height: 3px;
+background-color: white;
+transform: scaleX(0);
+transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+transform: scaleX(1);
+}
+
+
+
+
+
+
+.footer {
+background-color: #0a0a0a;
+padding: 40px 10%;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-wrap: wrap;
+border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.footer-logo {
+max-width: 100px;
+}
+.footer-left {
+max-width: 300px;
+}
+.footer h3 {
+font-size: 18px;
+margin-bottom: 15px;
+color: #00aaff;
+border-left: 3px solid #00aaff;
+padding-left: 10px;
+}
+.footer ul {
+list-style: none;
+padding: 0;
+}
+.footer ul li {
+margin-bottom: 10px;
+}
+.footer ul li a {
+text-decoration: none;
+color: #fff;
+transition: color 0.3s;
+}
+.footer ul li a:hover {
+color: #00aaff;
+}
+.footer-contact p {
+margin: 5px 0;
+}
+.footer-contact a {
+color: #00aaff;
+text-decoration: none;
+font-weight: bold;
+}
+.footer-bottom {
+text-align: center;
+padding: 15px;
+background: black;
+font-size: 14px;
+border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.aboutu {
+    max-width: 100%; /* Ensures it doesn’t exceed the parent div */
+    height: auto; /* Maintains aspect ratio */
+    margin-left: 370px;
+  }
+  .aboutuu{
+    width: 290px;
+  }
+  
+
+.logo-container {
+    position: relative; /* Change to relative to avoid absolute stacking */
+    top: 10px; /* Adjust spacing as needed */
+    left: 20px; /* Adjust positioning */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10px;
+}
+
+.logo-container img {
+    width: 80px; /* Adjust size */
+    height: auto;
+    display: block;
+}
+
+.logo {
+    display: none; /* Hide any old logos still present */
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: auto;
+}

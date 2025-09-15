@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection Requests</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/requests.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/allu.png') }}" alt="Alumni Portal Logo">
+            </a>
+        </div>  
+
+            <nav class="main-nav">
+               
+                <ul>
+                    <li><a href="{{ url_for('alumni_dashboard') }}">Home</a></li>
+                    <li><a href="{{ url_for('messages_page') }}">Messages</a></li>
+                    <li><a href="{{ url_for('jobs_page') }}">Jobs</a></li>
+                    <li>
+                        {% if session['role'] == 'student' %}
+                          <a href="{{ url_for('profile_page') }}"><i class="fas fa-user"></i> Profile</a>
+                        {% elif session['role'] == 'alumni' %}
+                          <a href="{{ url_for('profile_alumni') }}"><i class="fas fa-user"></i> Profile</a>
+                        {% endif %}
+                      </li>
+                    <li><a href="{{ url_for('events_page') }}">Events</a></li>
+                    <li><a href="{{ url_for('logout') }}" class="btn-secondary">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    
+    <div class="container">
+        <h1>Connection Requests</h1>
+        <div id="requests-container">
+            <div class="loading">
+                Loading requests...
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    {% include 'footer.html' %}
+    <script src="{{ url_for('static', filename='js/requests.js') }}"></script>
+</body>
+</html>

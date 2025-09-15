@@ -1,0 +1,237 @@
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(205, 229, 229);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+/* Navbar Styles - Fixed Version */
+header.navbar {
+    background-color: rgb(20, 9, 111);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 1; /* Make logo appear first */
+}
+
+.logo-container img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Main nav styling - centered */
+nav.main-nav {
+    display: flex;
+    order: 2; /* Make nav appear second */
+    flex: 1; /* Take up available space */
+    justify-content: center; /* Center the navigation items */
+}
+
+nav.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav.main-nav ul li {
+    margin: 0 40px; /* Reduced side margins */
+    position: relative;
+}
+
+/* Icon positioning - moved to left of text */
+nav.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 10px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row-reverse; /* This reverses icon/text order */
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+nav.main-nav ul li a:hover {
+    color: #007bff;
+    background-color: white;
+    border-radius: 5px;
+}
+
+
+/* Main Content */
+.container {
+    width: 50%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), 
+                -5px -5px 15px rgba(0, 0, 0, 0.2);
+    margin: 100px auto;
+}
+
+.requests-list {
+    list-style: none;
+    padding: 0;
+}
+
+.request-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.request-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.update-btn {
+    background: #2c9feb;
+    background: linear-gradient(to bottom, #2c9feb, #010c12);
+    border-radius: 28px;
+    color: #ffffff;
+    font-size: 16px;rgba(179, 99, 99, 0.2)
+    padding: 8px 16px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.update-btn:hover {
+    background: #3cb0fd;
+    background: linear-gradient(to bottom, #3cb0fd, #3498db);
+}
+
+.no-requests {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #0a0a0a;
+    padding: 30px 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+    margin-top: auto;
+}
+
+.footer-left {
+    max-width: 300px;
+}
+
+.footer-logo {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #00aaff;
+    border-left: 3px solid #00aaff;
+    padding-left: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #00aaff;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-contact a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background: black;
+    font-size: 14px;
+    color: white;
+}
+
+.developer-link {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 80px auto;
+    }
+    
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 30px;
+    }
+}

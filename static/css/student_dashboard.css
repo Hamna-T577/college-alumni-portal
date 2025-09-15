@@ -1,0 +1,528 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Background Wrapper */
+.background-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    
+}
+
+.background-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; /* take full height of parent */
+    background: url('../images/int4.jpg') no-repeat center center;
+    background-size: cover; /* THIS fills width and keeps aspect ratio */
+    filter: brightness(50%);
+    z-index: -1;
+}
+
+
+
+.picc {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Navbar wrapper */
+header.navbar {
+    background-color: #391e3b;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container img {
+    height: 42px;
+    width: auto;
+}
+
+/* Main nav styling */
+nav.main-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end; /* 👈 move everything to the left */
+    padding-left: 0px; /* 👈 optional: add padding to shift content from edge */
+}
+
+nav.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav.main-nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 30px;
+    font-size: 18px;
+    display: inline-block;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+nav.main-nav ul li a:hover {
+    color: #007bff;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Underline on hover */
+nav.main-nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav.main-nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+/* Enlarging the search bar */
+.search-section input {
+    width: 120%; /* Keep this if intentional */
+    height: 30px;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    
+    margin-left: -70px; /* 👈 Move it leftwards */
+}
+
+
+.search-section {
+    margin: 20px 0 20px 0px; /* Top, Right, Bottom, Left */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+
+    width: 80%;
+    max-width: 4000px;
+    box-sizing: border-box;
+}
+
+
+
+#searchResults {
+    position: absolute;
+    background: white;
+    width: 300px; /* Match your search input width */
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: block; /* Ensure it's visible */
+    margin-top: 5px;
+    color: black; 
+}
+
+.search-result-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+
+
+/* Hero Section (unchanged) */
+.hero {
+    padding: 80px 5% 40px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: rgb(206, 205, 221); /* changed from plain white to match .welli */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;       /* Prevents wrapping */
+    text-align: center;        /* Centers it */
+    width: 100%;
+    margin-top: 60px;         /* Moves it upwards */
+}
+
+.hero-content p {
+    font-size: 25px; /* From .quote */
+    font-style: italic; /* From .quote */
+    color: rgb(211, 232, 211); /* From .quote */
+    max-width: 800px; /* From original */
+    margin: 0 auto 30px auto; /* Centered + bottom margin from .quote */
+}
+
+/* Updated Dashboard Container */
+.dashboard-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto 40px; /* Increased top margin */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Updated Dashboard Section - Full Width */
+.dashboard-section {
+    width: 95%;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.dashboard-section h2 {
+    color: rgb(30, 30, 113);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(206, 165, 112);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Updated Job List - Two Columns */
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px;
+}
+
+/* Updated Job Card Styling */
+.job-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid rgb(20, 9, 111);
+    transition: all 0.3s ease;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.job-card h3 {
+    color: rgb(20, 9, 111);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.job-card p {
+    margin: 8px 0;
+    color: #333;
+}
+
+.job-card .job-meta {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Friends List (unchanged) */
+#friends-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#friends-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+#friends-list li:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+#friends-list li button {
+    background: rgb(26, 75, 104);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#friends-list li button:hover {
+    background: rgb(20, 60, 85);
+}
+
+/* Footer (unchanged) */
+.footer {
+    background-color: rgb(20, 9, 111); /* replaced black with your blue */
+    padding: 5px 20px; /* reduced top/bottom padding to shrink height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* changed from flex-start to center for tighter vertical alignment */
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+
+
+.footer-left {
+    max-width: 300px;
+}
+
+.footer-left img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #00aaff;
+    border-left: 3px solid #00aaff;
+    padding-left: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #00aaff;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-contact a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background: black;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.search-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.ss {
+    margin-left: 00px; 
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: rgb(20, 9, 111);
+    box-shadow: 0 0 0 2px rgba(20, 9, 111, 0.2);
+}
+
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.results-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 4px;
+    max-height: 250px;
+    overflow-y: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-result-item {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-result-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ss {
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .form-control {
+        max-width: 100%;
+    }
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .job-list {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .search-container {
+        max-width: 100%;
+    }
+    
+    .main-nav ul {
+        justify-content: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .main-nav a {
+        justify-content: center;
+    }
+    
+    .job-card {
+        padding: 15px;
+    }
+}

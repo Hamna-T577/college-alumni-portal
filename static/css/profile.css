@@ -1,0 +1,359 @@
+/* profile.css - Complete Styles */
+
+/* ========== GENERAL STYLES ========== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('../images/int4.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 44, 82, 0.7);
+    z-index: -1;
+}
+
+/* ========== NAVBAR ========== */
+/* Navbar wrapper */
+header.navbar {
+    background-color:  rgb(20, 9, 111);
+    
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    gap: -10px;
+    
+}
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.logo-container img {
+    height: 42px;
+    width: auto;
+}
+
+/* Main nav styling */
+nav.main-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end; /* 👈 move everything to the left */
+    padding-left: 0px; /* 👈 optional: add padding to shift content from edge */
+}
+
+nav.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav.main-nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 18px;
+    font-size: 18px;
+    display: inline-block;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+nav.main-nav ul li a:hover {
+    color: #007bff;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Underline on hover */
+nav.main-nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav.main-nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.post-job-btn {
+    background: rgba(206, 165, 112, 0.8);
+    font-weight: bold;
+}
+
+.post-job-btn:hover {
+    background: rgba(206, 165, 112, 1);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ========== PROFILE CONTENT ========== */
+.profile-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid rgb(20, 9, 111);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2 {
+    color: rgb(20, 9, 111);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(206, 165, 112);
+}
+
+.profile-info p {
+    margin: 12px 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.profile-info strong {
+    color: rgb(20, 9, 111);
+    font-weight: 600;
+}
+
+#skills-display {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #333;
+}
+
+/* ========== SKILLS CONTAINER ========== */
+.skills-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.skills-container h3 {
+    color: rgb(20, 9, 111);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.select2-container {
+    width: 100% !important;
+    margin-bottom: 20px;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    min-height: 45px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: rgb(20, 9, 111);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 3px 8px;
+    margin-right: 5px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color: white;
+    margin-right: 5px;
+}
+
+.update-btn {
+    background-color: rgb(20, 9, 111);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.update-btn:hover {
+    background-color: rgb(26, 75, 104);
+    transform: translateY(-2px);
+}
+
+#skills-update-message {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #155724;
+    font-weight: 500;
+    display: none;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background-color: rgb(20, 9, 111);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ✅ Resume Upload Styling */
+.resume-upload-container {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px dashed #ccc;
+}
+
+.resume-upload-container h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#resume-file {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-info h2 {
+        font-size: 1.8rem;
+        border-bottom: none;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 0 15px;
+    }
+
+    .profile-card,
+    .skills-container {
+        padding: 20px;
+    }
+
+    .profile-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile-info p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start New Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/messages.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <h1>Your Connections</h1>
+        <div id="connectionsList">
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i> Loading connections...
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/get-connections-for-chat')
+            .then(response => response.json())
+            .then(connections => {
+                const container = document.getElementById('connectionsList');
+                
+                if (connections.length === 0) {
+                    container.innerHTML = '<p>No connections yet</p>';
+                    return;
+                }
+                
+                let html = '';
+                connections.forEach(conn => {
+                    html += `
+                    <div class="connection-item" onclick="window.location='/messages/${conn.id}'">
+                        <img src="${conn.profile_image || '/static/images/default_profile.png'}" 
+                             alt="${conn.full_name}" class="user-avatar">
+                        <div class="connection-info">
+                            <h3>${conn.full_name}</h3>
+                        </div>
+                    </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            });
+    });
+    </script>
+</body>
+</html>
