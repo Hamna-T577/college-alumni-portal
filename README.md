@@ -1,4 +1,4 @@
 # college-alumni-portal
-#contributers:Hamna T-hamnatmusthafakk@gmail.com
+#contributers:Hamna T  (hamnatmusthafakk@gmail.com)
               Hiba,
               Safa
